@@ -29,56 +29,9 @@ function EmployeePanel({data}) {
     
 
     const [tasks, setTasks] = useState(data);
-     // Add state for tasks
-    // const acceptedhandle= (task)=>{
-    //     //creating newtask that contains old task prperties with new changes
-    //     const newtask= {
-    //         ...task,
-    //         active:true,
-    //         newTask:false,
-    //         completed:false,
-    //     }
-    //     console.log("newtask",newtask);
-        
-    //     //removing that task from array and adding updated task
-    //     const remove= data.tasks.map((e)=>  
-    //         {if(e.taskTitle === task.taskTitle ){
-    //             return newtask
-    //         }
-    //         else{ return e   }
-    //     })
-    //     console.log("remove",remove);
-        
-    //     const updatedtask= employees.employee.map((e)=>{
-    //         if (e.email== task.email){
-    //          //console.log(e);
-    //          return{
-    //              ...e,
-    //              taskNumbers:{
-    //                  ...e.taskNumbers,
-    //                  active: e.taskNumbers.active +1,
-    //                  newTask: e.taskNumbers.newTask -1,
-    //              }
-    //              ,tasks: 
-    //                  remove,
-    //          } }
-    //         return e
-    //      })
-    //     console.log("updated",updatedtask);
+  
 
-    //     setTasks(updatedtask.find((e)=> 
-    //         {  if (e.email === data.email) {
-    //                 return e
-    //             }
-    //          }))
-    //          console.log("tasks",tasks);
-             
-    //      localStorage.setItem("data",JSON.stringify(updatedtask))
-    //      getlocalstorage()
-
-    // }
-
-console.log("data",employees);
+//console.log("data",employees);
 
          const updatedhandle = (task,status)=>{
             const updatedTask = { ...task, ...status };
@@ -98,12 +51,12 @@ console.log("data",employees);
                     }else{
                         return e
                     } })
-              console.log("updatedtasks",updatedTask);
-                console.log("updatedemployee",updatedemployee);
+            //   console.log("updatedtasks",updatedTask);
+            //     console.log("updatedemployee",updatedemployee);
                
            setTasks(updatedemployee.find((e) => e.email === data.email));
            setAlldata({employee:updatedemployee})
-           console.log("tasks",tasks);
+           //console.log("tasks",tasks);
               localStorage.setItem("data", JSON.stringify(updatedemployee));
                 getlocalstorage();
 
@@ -111,8 +64,6 @@ console.log("data",employees);
     }
 
     const updateTaskNumbers = (taskNumbers, status) => {
-        console.log("taskNumbers",taskNumbers);
-        console.log("status",status);
         
         if (status === 'completed') {
             return { ...taskNumbers, active: taskNumbers.active === 0 ? 0 :taskNumbers.active -1, completed: taskNumbers.completed + 1 };

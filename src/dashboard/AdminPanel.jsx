@@ -4,13 +4,6 @@ import { getlocalstorage, setlocalstorage } from '../Localstorage/Localstorage'
 
 function AdminPanel() {
 
-    // useEffect(()=>{
-    //     setlocalstorage()
-    //   getlocalstorage()  
-    //   console.log("changedddd");
-      
-    // },[])
-    // console.log("chaged");
     
     const data = useContext(Authcontext)
     const [formData, setFormData] = useState({
